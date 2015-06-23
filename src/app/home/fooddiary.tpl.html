@@ -1,0 +1,6 @@
+<h2>Food Diary</h2>
+
+<div ng-repeat="food in diaryList">
+	<h3>{{food.date}}</h3>
+	<div ng-repeat="fooditem in food.food">{{fooditem}}</div>
+</div>

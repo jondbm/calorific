@@ -1,0 +1,68 @@
+<div class="l-block-3">
+	<h2>Add Food Eaten Today</h2>
+<div class="summary_status">
+    Today is a <div class="btn-group" role="group" aria-label="Day type">
+        <label class="btn btn-primary" ng-model="radioModelrest" ng-change="workoutType()" btn-radio="'workout'">Workout day</label>
+        <label class="btn btn-primary" ng-model="radioModelrest" ng-change="workoutType()" btn-radio="'rest'">Rest day</label>
+      </div>
+    </div>
+
+	<form ng-submit="addFood('input')">
+    <input type="text" class="col-sm-10" ng-model="selectedItementer" typeahead-on-select='onAddFoodSelect($item)' typeahead="food.name as food.name for food in foodItems | filter:$viewValue | limitTo:12" typeahead-editable="false" class="form-control" placeholder="Enter Food Name">
+		<input type="submit" value="Add"/>
+	</form>
+	-- Or choose from list --
+	<form ng-submit="addFood('list')">
+
+       <select ng-model="selectedItemlist" ng-options="item.name for item in foodItems">
+ 
+      <option ng-repeat="food in foodItems" value="{{food.id}}">{{food.name}}</option>
+			<!--option value="">Food 1</option-->
+		</select>
+    <input type="submit" value="Add"/>
+	</form>
+
+</div>
+<div class="l-block-4">
+	Add a new food to choose from:
+	<br ><br />
+	<form class="form-horizontal" novalidate role="form" id="addfoodform" name="addfoodform" ng-submit="addNewFood(addfoodform.$valid)">
+    <div class="form-group">
+    <label class="control-label col-sm-6" for="foodname">Food Name:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" ng-model="addform.foodname" id="foodname" placeholder="Enter Food Name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-6" for="calories">Calories:</label>
+    <div class="col-sm-6">
+      <input type="number" class="form-control" required ng-model="addform.calories" id="calories" placeholder="Enter Calories (kC)">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-6" for="protein">Protein:</label>
+    <div class="col-sm-6"> 
+      <input type="number" class="form-control" required ng-model="addform.protein" id="protein" placeholder="Enter Protein (g)">
+    </div>
+  </div>
+    <div class="form-group">
+    <label class="control-label col-sm-6" for="carbs">Carbohydrates:</label>
+    <div class="col-sm-6">
+      <input type="number" class="form-control" required ng-model="addform.carbs" id="carbs" placeholder="Enter Carbohydrates (g)">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-6" for="fats">Fats:</label>
+    <div class="col-sm-6"> 
+      <input type="number" class="form-control" required ng-model="addform.fats" id="fats" placeholder="Enter Fats (g)">
+    </div>
+  </div>
+
+  <div class="form-group">
+  <div class="col-sm-6"></div> 
+    <div class="col-sm-6">
+      <button type="submit" class="btn btn-default" ng-disabled="addfoodform.$invalid">Submit</button>
+    </div>
+  </div>
+</form>
+</div>

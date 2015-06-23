@@ -1,0 +1,29 @@
+<div class="l-box-summary">
+	<h2>Total Summary</h2>	
+	<!--button ng-click="changeStartDate()">
+		<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Change start date</a>
+	</button-->
+	<p class="input-group">
+             Start Date: <input ng-change="changeDateSummary()" type="date" class="form-control" ng-model="globalScope.summarydate" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <!--span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span-->
+            </p>
+	<div class="summary_status">
+		You are currently <div class="btn-group" role="group" aria-label="Day type">
+
+ <label class="btn btn-primary" ng-change="changeBulk()" ng-model="radioModelbulk" btn-radio="'Bulking'">Bulking</label>
+ <label class="btn btn-primary" ng-change="changeBulk()" ng-model="radioModelbulk" btn-radio="'Cutting'">Cutting</label>
+    
+  <!--button type="button" id="bulking" class="btn btn-default active" ng-click="changeSummmary()">Cutting</button>
+  <button type="button" id="bulking" class="btn btn-default" ng-click="changeSummmary()">Bulking</button-->
+</div>
+		</div>
+	<div class="summary_status">
+		Days completed: <strong><span class="larger">{{summary.totaldays}}</span></strong> ({{summary.restdays}} rest / {{summary.workoutdays}} workout)
+	</div>
+
+<macrotable ng-model="globalScope.macrosummary"></macrotable>
+
+	<div>
+</div>

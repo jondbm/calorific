@@ -78,6 +78,7 @@ module.exports = function(grunt) {
         vendor_files: {
             js: [
                 'vendor/angular/angular.js',
+                'vendor/ngstorage/ngStorage.js',
                 'vendor/angular-resource/angular-resource.js',
                 'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
                 'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',

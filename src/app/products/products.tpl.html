@@ -1,0 +1,11 @@
+<h1>Products</h1>
+
+<ul>
+    <li ng-repeat="product in model.products">
+        {{product.name}}
+        <a class="btn btn-default" ng-href="#/products/edit-product/{{product.id}}">
+            Edit <i class="fa fa-pencil"></i>
+        </a>
+    </li>
+</ul>
+<a ng-href="#/products/add-product" class="btn btn-default">Add a Product</a>

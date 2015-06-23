@@ -1,0 +1,8 @@
+<div class="l-block-2">
+	<h2>Today's foods</h2>
+	<ul class="list-group">
+		<div ng-repeat="obj in globalScope.todaysfoodItems track by $index">
+		  <li class="list-group-item"><span ng-bind="obj.name"></span><span class="glyphicon glyphicon-remove pull-right" aria-hidden="true" ng-click="removeFood(obj.id)"></span></li>
+		</div>
+	</ul>
+</div>

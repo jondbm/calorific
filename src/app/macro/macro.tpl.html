@@ -1,0 +1,95 @@
+<div class="container" ui-view="header"></div>
+
+<br />
+
+<div class="row">
+
+<div class="frm-group col-sm-3 macroprofile">
+  <label for="sel1" class="pull-left">Choose a profile:</label>
+  
+  <select ng-model="selectedMacro" ng-options="macro.name for macro in myMacros" ng-change="changeMacro()">
+      <option ng-repeat="macro in myMacros" value="{{macro.id}}">{{macro.name}}</option>
+			<!--option value="">Food 1</option-->
+  </select>
+<div>
+<br />
+<a href="#" ng-click="clearMacro()">New Macro Profile</a><br />
+</div>
+</div>
+<div class="col-sm-9">
+<ol>
+	<li>Use the site below to calculate your macro ratios, note them down, then copy them in the form below.
+	<li>Fill in the form with your macros and hit 'Save' to use those macros in your calculations.</li>
+</ol>
+</div>
+
+</div>
+
+<div class="row">
+<form class="macroformx" novalidate ng-submit="postMacros(mymacroform.$valid)" id="mymacroform" name="mymacroform">
+	<div class="col-sm-12">
+<input type="hidden" name="formid" id="formid" value="{{selectedMacro.id}}"/>
+	<h3>About:</h3>
+		<table>
+			<tr>
+				<td>Bulking or Cutting?</td>
+				<td>
+					<select ng-model="selectedBulk" ng-change="changeBulk()">
+						<option value="1">Bulking</option>
+						<option value="0">Cutting</option>
+					</select>
+				</td>
+			
+<td>Macro Set Name</td><td><input type="text" ng-model="selectedMacro.name" id="name" name="name" value="{{selectedMacro.name}}" required></td>
+		</table>
+		 <span style="color:red" ng-show="mymacroform.name.$dirty && mymacroform.name.$invalid">
+  <span ng-show="mymacroform.name.$error.required">Macro Set Name is required.</span>
+  </span>
+
+	</div>
+	<div class="col-sm-6">
+	<h3>Workout Day:</h3>
+		<table>
+		<tr>
+			<td>Calories</td><td><input type="number" ng-model="selectedMacro.wkcals" value="{{selectedMacro.wkcals}} "></td>
+		</tr>
+		<tr>
+			<td>Protein</td><td><input type="number" ng-model="selectedMacro.wprot" value="{{selectedMacro.wprot}}"></td>
+		</tr>
+		<tr>
+			<td>Carbohydrates</td><td><input type="number" ng-model="selectedMacro.wcarbs" value="{{selectedMacro.wcarbs}}"></td>
+		</tr>
+		<tr>
+			<td>Fats</td><td><input type="number" ng-model="selectedMacro.wfats" value="{{selectedMacro.wfats}}"></td>
+		</table>
+</div>
+
+	<div class="col-sm-6">
+
+	<h3>Rest Day:</h3>
+		<table>
+			<td>Calories</td><td><input type="number" ng-model="selectedMacro.kcals" ng-model="selectedMacro.kcals" value="{{selectedMacro.kcals}}"></td>
+		</tr>
+		<tr>
+			<td>Protein</td><td><input type="number" ng-model="selectedMacro.prot" value="{{selectedMacro.prot}}"></td>
+		</tr>
+		<tr>
+			<td>Carbohydrates</td><td><input type="number" ng-model="selectedMacro.carbs" value="{{selectedMacro.carbs}}"></td>
+		</tr>
+		<tr>
+			<td>Fats</td><td><input type="number" ng-model="selectedMacro.fats" value="{{selectedMacro.fats}}"></td>
+		</table>
+<div class="pull-right"><input type="submit"
+  ng-disabled="mymacroform.$invalid"><br /><br /></div>
+</form>
+
+</div>
+
+
+
+
+
+</div>
+
+<iframe width="100%" height="800px;" src="http://sareyko.net/leancalc"></iframe>
+

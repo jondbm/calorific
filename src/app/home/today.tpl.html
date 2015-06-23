@@ -1,0 +1,24 @@
+<div class="l-block-1">
+	<h2>Today's summary</h2>
+	<a ng-href="#/fooddiary" target="_blank"><button class="pull-right">
+		<span class="glyphicon glyphicon-print" aria-hidden="true"></span>Print food diary</a>
+	</button></a>
+	<!--button ng-click="changeDate()">
+		<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Change date</a>
+	</button-->
+
+
+
+	<p class="input-group">
+             Date: <input ng-change="changeDate()" type="date" class="form-control" ng-model="globalScope.todaysdate" is-open="opened" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <!--span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span-->
+            </p>
+	<!--button ng-click="deleteDate()">
+		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Delete date</a>
+	</button-->
+<macrotable ng-model="globalScope.macros"></macrotable>
+	
+	<div><a href="#macro">Change Macros</a>
+   </div>

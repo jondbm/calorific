@@ -1,11 +1,55 @@
-<h1>Home of Calorific</h1>
 
-<p>Code it up</p>
-
-<p>
+<!--p>
+	    <header>
+        <nav class="container navbar-default" data-ng-controller="HomeController">
+            <ul class="nav navbar-nav" ng-hide="loggedin2">
+                <li ui-sref-active="active">
+                    <a ng-href="#/home">Home</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ng-href="#/about">About</a>
+                </li>
+                <li ui-sref-active="active">ff
+                    <!--a ui-sref="logout">Log-out</a>
+                    <a ng-click="logout()">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+	<div ui-view></div>
+   
+    <a ui-sref="state1">State 1</a>
+    <a ui-sref="state2">State 2</a>
     <span ng-bind="model.someVar" />
     <ul>
         <li ng-repeat="item in model.someList">{{item}}</li>
     </ul>
     <button class="btn btn-primary" ng-click="model.someFunctionUsedByTheHomePage()">Click Me</button>
-</p>
+
+     <button class="btn btn-primary" ng-click="model.tokenTester()">Token Test</button>
+</p-->
+
+<div class="container" ui-view="header"></div>
+
+<div class="container">
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <div ui-view="today"></div>
+    </div> 
+
+
+    <div class="col-md-6">
+      <div ui-view="todayfood"></div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <div  ui-view="addfood"></div>
+    </div>
+     <div class="col-md-6" ui-view="summary"></div>
+    </div>
+    

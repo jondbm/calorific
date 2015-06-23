@@ -1,3 +1,187 @@
 .homeClass {
   margin: 0 0 0 0;
 }
+
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-family:Francois One;
+}
+
+label {
+    float: left;
+    width: 100px; /* change this to whatever you want */
+    /* these make it look nicer */
+    text-align: right;
+    padding-right: 10px;
+}
+
+ol {
+  li {
+    color:#ffffff;
+  }
+}
+
+td, th {
+  font-size:1.6em;
+  margin:5px;
+  padding:5px;
+}
+
+button {
+margin:5px;
+  padding:5px;
+  color:#ffffff;
+  background-color:#009900;
+}
+
+li, input, select {
+  font-size:1.5em;
+  color:#000000;
+}
+
+form {
+  margin:10px;
+}
+
+.navbar-inverse {
+	  background-color:#006600;
+  background-image:none;
+  border:none;
+
+}
+
+a {
+  color:#ffffff;
+}
+
+.navbar-brand {
+	color:#f33fff;
+}
+
+.navbar-nav > li > a {
+	color:#ffffff;
+	font-size:1.5em;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #00cc00;
+}
+
+.navbar-brand {
+	font-family:Francois One;
+	font-size:3em;
+}
+
+@basic-backing: #006600;
+
+.rounded(@radius: 20px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.gradient(@color: @basic-backing, @start: @basic-backing, @stop: @basic-backing) {
+  background: @color;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0, @start),
+                               color-stop(1, @stop));
+  background: -ms-linear-gradient(bottom,
+                                  @start,
+                                  @stop);
+  background: -moz-linear-gradient(center bottom,
+                                   @start 0%,
+                                   @stop 100%);
+  background: -o-linear-gradient(@stop,
+                                 @start);
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+
+.boxborder {
+  border:10px solid #f0f0f0;
+}
+
+.l-block-1 {
+  background-color:@basic-backing + #111;
+  padding:10px;
+  margin:10px;
+  .rounded;
+  .boxborder;
+}
+
+.l-block-2 {
+  background-color:@basic-backing + #222;
+  padding:10px;
+  margin:10px;
+  .rounded;
+  .boxborder;
+  .gradient(@basic-backing, @basic-backing, @basic-backing + #222);
+}
+
+.l-block-3 {
+  background-color:@basic-backing + #333;
+  padding:10px;
+  margin:10px;
+  .rounded;
+  .boxborder;
+  .gradient(@basic-backing, @basic-backing, @basic-backing + #333);
+}
+
+.l-block-4 {
+  background-color:@basic-backing + #444;
+  padding:10px;
+  margin:10px;
+  .rounded;
+  .boxborder;
+  font-size:1.5em;
+  .gradient(@basic-backing, @basic-backing, @basic-backing + #444);
+}
+
+.l-box-summary {
+  background-color:@basic-backing + #333;
+  padding:10px;
+  margin:10px;
+  .rounded;
+  .boxborder;
+  .gradient(@basic-backing, @basic-backing, @basic-backing + #333);
+}
+
+.l-block-3 {
+  .rounded;
+  .boxborder;
+  .gradient(@basic-backing, @basic-backing, @basic-backing + #222);
+}
+
+
+.summary_status {
+  font-size:1.5em;
+  margin:5px;
+}
+
+.larger {
+  font-size:2em;
+}
+
+.explainer {
+  font-family:Verdana,Arial
+  margin:10px;
+  font-size:1.5em;
+}
+
+.macroprofile {
+  label {
+    width:200px;
+    text-align:left;
+  }
+}
+
+.macroform input {
+  font-size:1em;
+}
+
